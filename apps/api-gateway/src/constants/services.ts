@@ -2,11 +2,11 @@ const prefixUrl = '/api/v1';
 
 export const services = [
   {
-    prefixUrlService: `${prefixUrl}/product`,
-    baseUrlService: `http://localhost:3001`,
+    originalUrl: `${prefixUrl}/product`,
+    target: `http://localhost:3001`,
   },
   {
-    prefixUrlService: `${prefixUrl}/image`,
-    baseUrlService: `http://localhost:3002`,
+    originalUrl: `${prefixUrl}/image`,
+    target: `http://localhost:3002`,
   },
 ];

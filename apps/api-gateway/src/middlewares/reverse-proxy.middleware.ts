@@ -8,13 +8,13 @@ export function ReverseProxyMiddleware(
   next: NextFunction,
 ) {
   const service = services.find((service) =>
-    req.originalUrl.startsWith(service.prefixUrlService),
+    req.originalUrl.startsWith(service.originalUrl),
   );
 
   const proxy = createProxyMiddleware({
-    target: `${service.baseUrlService}`,
+    target: `${service.target}`,
     pathRewrite: {
-      [service.prefixUrlService]: '',
+      [service.originalUrl]: '',
     },
     secure: false,
     onProxyReq: (proxyReq, req: Request) => {
